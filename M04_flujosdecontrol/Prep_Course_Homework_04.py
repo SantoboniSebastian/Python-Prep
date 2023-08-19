@@ -7,7 +7,10 @@
 
 # In[4]:
 
-
+num = 2
+if (num<0): print("El numero es menor a 0") 
+elif(0<num): print("El numero es mayor a 0") 
+else: print("El numero es igual a 0")
 
 
 
@@ -15,7 +18,9 @@
 
 # In[5]:
 
-
+a = 2
+b=2
+if (type(a) == type(b)): print("Lo son")
 
 
 
@@ -23,6 +28,13 @@
 
 # In[7]:
 
+i = 0
+while i != 20:
+    i += 1
+    if i % 2 == 0:
+        print(str(i) + " es par")
+    else:
+        print(str(i) + " es impar")
 
 
 
@@ -31,7 +43,8 @@
 
 # In[9]:
 
-
+for n in range(0, 5):
+    print(n ** 3)
 
 
 
@@ -39,7 +52,9 @@
 
 # In[10]:
 
-
+ciclo = 2
+for n in range(0, ciclo):
+    print (n)
 
 
 
@@ -47,6 +62,19 @@
 
 # In[33]:
 
+n = 23
+
+div = 2
+if n <= 0 or str(type(n)) != "<class 'int'>":
+    print("numero invalido")
+else:
+    while n != 1:
+        if n % div == 0:
+            n /= div
+            print(div)
+            div = 2
+        else:
+            div += 1
 
 
 
@@ -55,7 +83,10 @@
 
 # In[38]:
 
-
+while True:
+    for n in range(10,0,-1):
+        print(n)
+    break
 
 
 
@@ -63,7 +94,12 @@
 
 # In[3]:
 
-
+for n in range(10, 0, -1):
+    while True:
+        print(n)
+        n += 1
+        if n == 10:
+            break
 
 
 
@@ -71,14 +107,28 @@
 
 # In[54]:
 
-
+primo = 1
+while (primo <30):
+    primo += 1
+    if primo == 2 or primo == 3: print(primo)
+    if primo%2==0 or primo%3==0 or primo%5==0: {}
+    else:
+        print(primo)
 
 
 # 10) ¿Se puede mejorar el proceso del punto 9? Utilizar las sentencias break y/ó continue para tal fin
 
 # In[55]:
 
-
+primo = 1
+while (primo <30):
+    primo += 1
+    if primo == 2 or primo == 3:
+        print(primo)
+        continue
+    if primo%2==0 or primo%3==0 or primo%5==0: continue
+    else:
+        print(primo)
 
 
 
@@ -86,7 +136,7 @@
 
 # In[56]:
 
-
+#se saltea las comparaciones innecesarias, haciendo al codigo mas ligero
 
 
 # In[57]:
@@ -98,7 +148,12 @@
 
 # In[62]:
 
-
+div12 = 99
+while (div12 <300):
+    div12 += 1
+    if div12 % 12 == 0:
+        print(div12)
+        continue
 
 
 
@@ -107,11 +162,34 @@
 # In[73]:
 
 
+n_input = int(input("ingresa un numero y se dara el primo mayor mas cercano: "))
+if n_input < 2:
+    print(2)
+elif n_input < 3:
+    print(3)
 
+while n_input > 3:
+    saltar = False
+    n_input += 1
+    if n_input % 2 == 0: continue
+    for i in range(3, int(n_input ** 0.5) + 1, 2):
+        if n_input % i == 0:
+            saltar = True
+            continue
+
+    if saltar: continue
+    print(n_input)
+    if input("encontrar el siguiente? (y/n): ") == "y": continue
+    break
 
 # 14) Crear un ciclo while que encuentre dentro del rango de 100 a 300 el primer número divisible por 3 y además múltiplo de 6
 
 # In[75]:
 
-
+mult_div = 99
+while (mult_div <300):
+    mult_div+=1
+    if mult_div % 6 == 0:
+        print(mult_div)
+        break
 
