@@ -1,21 +1,29 @@
 class Funciones_Matematicas:
     def __init__(self,lista):
+        assert type(lista) == list,"Se debe ingresar una lista de numeros"
         self.lista = lista
 
     def verificar_primo_lista(self):
+        nuevalista = []
         for i in self.lista:
-            if (self.verificar_primo(i)):
-                print(i, 'es primo')
-            else:
-                print(i, 'no es primo')
+            #if (self.verificar_primo(i)):
+            #    print(i, 'es primo')
+            #else:
+            #    print(i, 'no es primo')
+            nuevalista.append(self.verificar_primo(i))
+        return nuevalista
 
     def conversion_grados_lista(self, origen, destino):
+        nuevalista = []
         for i in self.lista:
-            print(self.conversion_grados(i, origen, destino))
+            nuevalista.append(self.conversion_grados(i, origen, destino))
+        return nuevalista
 
     def factorial_lista(self):
+        nuevalista = []
         for i in self.lista:
-            print(self.factorial(i))
+            nuevalista.append(self.factorial(i))
+        return nuevalista
 
     def verificar_primo(self ,numero):
         if numero == 2 or numero == 3:
@@ -38,15 +46,16 @@ class Funciones_Matematicas:
             contador+=1
         return resultado
 
-    def valor_modal(self, lista):
+    def valor_modal(self):
         reps = 0
         max_reps = 0
         max_rep_n = 0
         start = 1
+        
         n = start
-        for i in lista:
-            while n < len(lista):
-                if i == lista[n]:
+        for i in self.lista:
+            while n < len(self.lista):
+                if i == self.lista[n]:
                     reps += 1
                     if reps > max_reps:
                         max_reps = reps
@@ -55,10 +64,12 @@ class Funciones_Matematicas:
             reps = 0
             start += 1
             n = start
-        return "El numero " + str(max_rep_n) + " se repitio mas veces: " + str(max_reps)
+        return [max_rep_n , max_reps]
     
     def conversion_grados(self, temp, origen, cambio):
         """ strings °C, °F Y °K"""
+        assert origen == "°C" or origen == "°F" or origen == "°K","Se deben ingresar las siglas de temperatura °C, °F o °K"
+        assert cambio == "°C" or cambio == "°F" or cambio == "°K","Se deben ingresar las siglas de temperatura °C, °F o °K"
         if origen == cambio: 
             return temp
         if origen == "°C":
@@ -78,3 +89,5 @@ class Funciones_Matematicas:
                 return temp - 273.15
             else:
                 return (temp - 273.15) * (9 / 5) + 32
+
+

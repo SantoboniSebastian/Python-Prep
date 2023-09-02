@@ -1,5 +1,6 @@
 {
     "python.analysis.extraPaths": [
-        "./M07_funciones"
+        "./M07_funciones",
+        "./M08_clasesyOOP"
     ]
 }
