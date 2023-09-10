@@ -18,5 +18,6 @@ if len(sys.argv) == 2:
     logs_lluvia.close()
 
 else:
-    print("ERROR: Introdujo una cantidad de argumentos distinta de tres (3)")
-    print('Ejemplo: clase09_ej1.py <temperatura> <humedad> <True o False>')
+    #print("ERROR: Introdujo una cantidad de argumentos distinta de tres (3)")
+    #print('Ejemplo: clase09_ej1.py <temperatura> <humedad> <True o False>')
+    print(sys.argv)

@@ -175,7 +175,7 @@ while n_input > 3:
     for i in range(3, int(n_input ** 0.5) + 1, 2):
         if n_input % i == 0:
             saltar = True
-            continue
+            break
 
     if saltar: continue
     print(n_input)
